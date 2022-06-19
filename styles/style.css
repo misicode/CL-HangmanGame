@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap');
+
+:root {
+    --text-light: #ffffff;
+    --text-medium: #8dedd8;
+    --text-dark: #9070d5;
+    --text-aux: #3d3863;
+    --bar-color: #25223f;
+    --card-color: #FFFFFF;
+    --primary-color: #8684c6;
+    --primary-hover-color: #6c69a5;
+    --primary-shadow-color: #d1acff;
+    --secondary-color: #d2d4d9;
+    --secondary-hover-color: #b6bdc6;
+    --secondary-shadow-color: #dde0e6;
+    --auxiliar-color: #ace9dc;
+    --auxiliar-hover-color: #8bd6c6;
+    --auxiliar-shadow-color: #bcede3;
+    --border-color: #E2E8F0;
+    --border-focus-color: #D0D7E1;
+    --text-font: "Nunito Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --title-font: 'Jua', sans-serif;
+    --x-font: 'Baloo 2', cursive;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--text-font);
+    letter-spacing: 1px;
+}
+
+.container {
+    height: 100vh;
+    background: url('/public/wallpaper.jpg');
+}
+
+#back {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(30, 28, 47, 0.6);
+}
+
+.logo {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 25px;
+}
+
+.container-section {
+    height: calc(100% - 32px);
+}
+
+#container-home > h1 {
+    padding: 85px 0 65px;
+    text-align: center;
+    font-family: var(--title-font);
+    font-size: 85px;
+    letter-spacing: 2px;
+    color: var(--text-dark);
+    text-shadow: 5px 5px 5px var(--primary-shadow-color);
+}
+
+.container-btns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn {
+    padding: 20px 0;
+    width: 190px;
+    font-family: var(--text-font);
+    letter-spacing: 1px;
+    border: none;
+    border-radius: 30px;
+}
+
+.btn-primary {
+    color: var(--text-light);
+    background-color: var(--primary-color);
+    transition: all 200ms ease;
+}
+
+.btn-primary:hover {
+    cursor: pointer;
+    background-color: var(--primary-hover-color);
+    box-shadow: 4px 4px 5px var(--primary-shadow-color);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    transition: all 200ms ease;
+}
+
+.btn-secondary:hover {
+    cursor: pointer;
+    background-color: var(--secondary-hover-color);
+    box-shadow: 4px 4px 5px var(--secondary-shadow-color);
+}
+
+.btn-auxiliar {
+    background-color: var(--auxiliar-color);
+    transition: all 200ms ease;
+}
+
+.btn-auxiliar:hover {
+    cursor: pointer;
+    background-color: var(--auxiliar-hover-color);
+    box-shadow: 4px 4px 5px var(--auxiliar-shadow-color);
+}
+
+#btn-on {
+    margin: 30px 0;
+}
+
+.section-help {
+    display: none;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.content-help {
+    margin: 15% auto 0;
+    width: 25%;
+    background-color: var(--card-color);
+    border-radius: 10px;
+}
+
+.help-header {
+    padding: 10px 15px;
+    height: 38px;
+    width: 100%;
+    color: var(--text-light);
+    background-color: var(--primary-color);
+    border-radius: 9px 9px 0 0;
+}
+
+#close {
+    float: right;
+    font-family: var(--x-font);
+    font-size: 20px;
+    line-height: 18px;
+}
+
+#close:hover, #close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.help-body {
+    padding: 13px 15px 20px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.section-off {
+    display: none;
+    align-items: center;
+}
+
+.content-game {
+    margin: 0 20rem;
+    padding-top: 50px;
+}
+
+#img-hangman {
+    display: block;
+    margin: 0 auto;
+    height: 350px;
+}
+
+.card-rightWords {
+    display: flex;
+    margin-top: 25px;
+    height: 55.2px;
+    justify-content: center;
+    font-size: 50px;
+    color: var(--text-dark);
+}
+
+.resp {
+    display: flex;
+    position: relative;
+    width: 60px;
+    justify-content: center;
+}
+
+.resp + .resp {
+    margin-left: 12px;
+}
+
+.resp::before {
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    top: 55px;
+    content: "";
+    background-color: var(--primary-hover-color);
+    border-radius: 10px;
+}
+
+.card-wrongWords {
+    display: flex;
+    margin-top: 18px;
+    margin-bottom: 5px;
+    height: 35.2px;
+    justify-content: center;
+    font-size: 40px;
+    color: var(--text-aux);
+}
+
+.int + .int {
+    margin-left: 10px;
+}
+
+.content-addword {
+    margin: 0 30rem;
+    padding-top: 85px;
+}
+
+.card {
+    padding: 25px 35px;
+    background-color: var(--card-color);
+    border-radius: 4px;
+}
+
+.card > label {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+#text {
+    width: 100%;
+    height: 20rem;
+    padding: 10px 15px;
+    font-size: 30px;
+    border-color: var(--border-color);
+    resize: none;
+}
+
+#text:focus {
+    outline-color: var(--border-focus-color);
+}
+
+.card p {
+    text-align: right;
+    font-size: 11px;
+}
+
+.card-btns {
+    display: grid;
+    margin-top: 20px;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+}
+
+.card-btns > button {
+    width: 100%;
+}
+
+.container-footer {
+    display: flex;
+    height: 32px;
+    background-color: var(--bar-color);
+    justify-content: center;
+}
+
+.credits {
+    line-height: 32px;
+    color: var(--text-light);
+    font-size: 12px;
+}
+
+.credits > a {
+    color: var(--text-light);
+    text-decoration: none;
+}
+
+.credits > a:hover {
+    font-weight: bold;
+    color: var(--text-medium);
+}
