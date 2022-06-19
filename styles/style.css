@@ -37,7 +37,7 @@ body {
 
 .container {
     height: 100vh;
-    background: url('/public/wallpaper.jpg');
+    background: url('../public/wallpaper.jpg');
 }
 
 #back {
