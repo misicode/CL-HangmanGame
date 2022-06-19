@@ -94,19 +94,19 @@ function guessLetter(event) {
 function drawHangman() {
     switch (intents) {
         case 4:
-            document.getElementById('img-hangman').src="../public/hangman_2.jpg";
+            document.getElementById('img-hangman').src="./public/hangman_2.jpg";
             break;
         case 3:
-            document.getElementById('img-hangman').src="../public/hangman_3.jpg";
+            document.getElementById('img-hangman').src="./public/hangman_3.jpg";
             break;
         case 2:
-            document.getElementById('img-hangman').src="../public/hangman_4.jpg";
+            document.getElementById('img-hangman').src="./public/hangman_4.jpg";
             break;
         case 1:
-            document.getElementById('img-hangman').src="../public/hangman_5.jpg";
+            document.getElementById('img-hangman').src="./public/hangman_5.jpg";
             break;
         case 0:
-            document.getElementById('img-hangman').src="../public/hangman_6.jpg";
+            document.getElementById('img-hangman').src="./public/hangman_6.jpg";
             setTimeout(function(){
                 alert(`¡Lo lamento, perdiste! :( \nLa palabra era ${ (word.toString()).replace(/,/g,"") }`);
                 restartGame();
@@ -144,7 +144,7 @@ function endGame() {
         wrongWords.removeChild(h6);
     }
 
-    document.getElementById('img-hangman').src="../public/hangman_1.jpg";
+    document.getElementById('img-hangman').src="./public/hangman_1.jpg";
 
     word = [];
     errors = [];
