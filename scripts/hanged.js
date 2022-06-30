@@ -45,7 +45,7 @@ btn_cancel.onclick = cancelAddWord;
 function startGame() {
     showGame();
     showWord();
-    window.addEventListener("keydown", guessLetter);
+    window.addEventListener("keypress", guessLetter);
 }
 
 // Función para seleccionar una palabra aleatoria
@@ -68,23 +68,26 @@ function showWord() {
 
 // Función para adivinar una letra de la palabra aleatoria
 function guessLetter(event) {
+    const validate = new RegExp("[A-z]","g");
     let letter = event.key.toUpperCase();
     let indexes = [];
 
-    if (word.includes(letter)) {
-        indexes = indexOfAll(word, letter);
-        indexes.forEach(i => {
-            const h5 = document.getElementById(`resp-${ i }`);
-            h5.textContent = word[i];
-        });
-    } else {
-        intents--;
-        drawHangman();
-        errors.push(letter);
-        const h6 = document.createElement("h6");
-        h6.classList.add("int");
-        h6.textContent = letter;
-        wrongWords.appendChild(h6);
+    if (validate.test(letter)) {
+        if (word.includes(letter)) {
+            indexes = indexOfAll(word, letter);
+            indexes.forEach(i => {
+                const h5 = document.getElementById(`resp-${ i }`);
+                h5.textContent = word[i];
+            });
+        } else {
+            intents--;
+            drawHangman();
+            errors.push(letter);
+            const h6 = document.createElement("h6");
+            h6.classList.add("int");
+            h6.textContent = letter;
+            wrongWords.appendChild(h6);
+        }
     }
 
     guessWord();
@@ -178,7 +181,7 @@ function addWord() {
 
 // Función para validar las palabras agregadas
 function validateWords(word) {
-    let validate = new RegExp("[À-ú0-9@|°¬#$%&/='\´`*¿?¡!(){}<>,.:;+^~_-]","g");
+    const validate = new RegExp("[À-ú0-9@|°¬#$%&/='\´`*¿?¡!(){}<>,.:;+^~_-]","g");
 
     if (validate.test(word.value)) {
         alert("¡Caracter inválido! Por favor, no se admiten palabras con acento o caracteres especiales.");
