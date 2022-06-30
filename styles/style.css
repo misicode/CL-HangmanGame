@@ -183,7 +183,7 @@ body {
 #img-hangman {
     display: block;
     margin: 0 auto;
-    height: 350px;
+    height: 330px;
 }
 
 .card-rightWords {
@@ -296,4 +296,56 @@ body {
 .credits > a:hover {
     font-weight: bold;
     color: var(--text-medium);
+}
+
+@media only screen and (max-width: 1023px) {
+    #container-home > h1 {
+        padding: 90px 0 50px;
+        font-size: 75px;
+    }
+
+    .content-help {
+        margin: 25% auto 0;
+        width: 45%;
+    }
+
+    .content-game {
+        margin: 0 4rem;
+        padding-top: 85px;
+    }
+
+    #img-hangman {
+        height: 295px;
+    }
+
+    .content-addword {
+        margin: 0 12rem;
+        padding-top: 85px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #container-home > h1 {
+        padding: 110px 0 50px;
+        font-size: 65px;
+    }
+
+    .content-help {
+        margin: 25% auto 0;
+        width: 65%;
+    }
+
+    .content-game {
+        margin: 0 2rem;
+        padding-top: 85px;
+    }
+
+    .content-addword {
+        margin: 0 2rem;
+        padding-top: 85px;
+    }
+
+    .card p {
+        font-size: 9px;
+    }
 }
