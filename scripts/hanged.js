@@ -68,7 +68,7 @@ function showWord() {
 
 // Función para adivinar una letra de la palabra aleatoria
 function guessLetter(event) {
-    const validate = new RegExp("[A-z]","g");
+    const validate = new RegExp("[A-zñÑ]","g");
     let letter = event.key.toUpperCase();
     let indexes = [];
 
