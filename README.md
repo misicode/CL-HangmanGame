@@ -10,7 +10,7 @@ Juego del ahorcado que consiste en probar con diferentes letras hasta encontrar 
 
 ## Muestra
 
-![CL-HangmanGame](https://user-images.githubusercontent.com/88341114/174822779-3359a603-20d0-42fa-977c-8f75091028a8.gif)
+<img src="https://user-images.githubusercontent.com/88341114/184556457-34e3fdd6-659f-4f20-8e8e-ca2c4341b56c.gif" width="700"/>
 
 ## Requisitos
 - Para comenzar el juego la página debe tener un botón de "Iniciar Juego".
