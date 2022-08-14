@@ -288,14 +288,14 @@ body {
     font-size: 12px;
 }
 
-.credits > a {
-    color: var(--text-light);
+.credits > a, .credits > a:-webkit-any-link {
+    color: var(--text-medium);
+    font-weight: bold;
     text-decoration: none;
 }
 
 .credits > a:hover {
-    font-weight: bold;
-    color: var(--text-medium);
+    color: var(--text-light);
 }
 
 @media only screen and (max-width: 1023px) {
